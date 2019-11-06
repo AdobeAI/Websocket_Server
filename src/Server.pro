@@ -26,13 +26,26 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    websocket.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    websocket.h
 
 FORMS += \
         mainwindow.ui
+
+INCLUDEPATH += \
+            /home/rd2brian/lib/jsoncpp-1.8.4/include \
+            /home/rd2brian/lib/boost_1_68_0 \
+
+LIBS += \
+        /home/rd2brian/lib/jsoncpp-1.8.4/src/lib_json/libjsoncpp.a \
+        -L/home/rd2brian/lib/boost_1_68_0/stage/lib \
+        -lboost_system \
+        -lpthread \
+
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
